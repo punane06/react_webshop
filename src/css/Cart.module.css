@@ -1,0 +1,64 @@
+.cartProduct {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  margin: 0 10%;
+  padding: 10px 0;
+}
+
+.productImg {
+  width: 200px;
+}
+
+.productName {
+  width: 300px;
+}
+.productPrice {
+  width: 70px;
+}
+.quantityControls {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+.productButton {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 1s;
+}
+.productButton:hover {
+  opacity: 1;
+  transition: 1s;
+}
+
+.totalSum {
+  width: 120px;
+}
+.ferrariButton {
+  background-color: #ff2800;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+.productButton:hover.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 900px) {
+  .productImg {
+    width: 150px;
+  }
+  .productName {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .productName {
+    width: 150px;
+  }
+}

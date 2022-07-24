@@ -1,0 +1,28 @@
+.lang {
+  height: 30px;
+  width: 30px;
+}
+.map {
+  height: 400px;
+  /* width: 600px; */
+}
+
+.product-image {
+  width: 200px;
+}
+.active-category {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.active-product {
+  border-bottom: 1px solid green !important;
+  margin: 1px;
+}
+.inactive-product {
+  border-bottom: 1px solid red !important;
+}
+
+.carousel {
+  width: 500px;
+  margin: auto;
+}
