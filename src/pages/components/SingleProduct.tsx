@@ -3,7 +3,12 @@ import { useParams } from "react-router-dom";
 
 function SingleProduct() {
   const { id } = useParams();
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState({
+    name: "",
+    description: "",
+    price: 0,
+    imgSrc: "",
+  });
   const productDbUrl =
     "https://react-june-webshop-default-rtdb.europe-west1.firebasedatabase.app/products.json";
 

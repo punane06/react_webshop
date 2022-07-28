@@ -21,32 +21,27 @@ function App() {
     <div className="App">
       <NavigationBar />
       <Routes>
-        <Route path="" exact element={<Home />}></Route>
-        <Route path="admin" exact element={<AdminHome />}></Route>
+        <Route path="" element={<Home />}></Route>
+        <Route path="admin" element={<AdminHome />}></Route>
         <Route
           path="admin/lisa-toode"
-          exact
           element={
             <div>
               <AddProduct />
             </div>
           }
         ></Route>
-        <Route path="admin/kategooriad" exact element={<Category />}></Route>
-        <Route path="admin/muuda/:id" exact element={<EditProduct />}></Route>
-        <Route path="admin/tooted" exact element={<MaintainProduct />}></Route>
-        <Route
-          path="muuda-toode"
-          exact
-          element={<div>Muuda toode</div>}
-        ></Route>
-        <Route path="item" exact element={<Item />}></Route>
-        <Route path="item/:itemName" exact element={<OneItem />}></Route>
-        <Route path="poed" exact element={<Shops />}></Route>
-        <Route path="ostukorv" exact element={<Cart />}></Route>
-        <Route path="meist" exact element={<AboutUs />}></Route>
-        <Route path="toode/:id" exact element={<SingleProduct />}></Route>
-        <Route path="*" exact element={<NotFound />}></Route>
+        <Route path="admin/kategooriad" element={<Category />}></Route>
+        <Route path="admin/muuda/:id" element={<EditProduct />}></Route>
+        <Route path="admin/tooted" element={<MaintainProduct />}></Route>
+        <Route path="muuda-toode" element={<div>Muuda toode</div>}></Route>
+        <Route path="item" element={<Item />}></Route>
+        <Route path="item/:itemName" element={<OneItem />}></Route>
+        <Route path="poed" element={<Shops />}></Route>
+        <Route path="ostukorv" element={<Cart />}></Route>
+        <Route path="meist" element={<AboutUs />}></Route>
+        <Route path="toode/:id" element={<SingleProduct />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </div>
   );

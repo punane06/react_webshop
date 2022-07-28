@@ -2,16 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import FileUpload from "../components/FileUpload";
 
 function AddProduct() {
-  const idRef = useRef();
-  const nameRef = useRef();
+  const idRef = useRef<HTMLInputElement | number>();
+  const nameRef = useRef<HTMLInputElement>();
   const priceRef = useRef();
   const descriptionRef = useRef();
   const categoryRef = useRef();
   const imgSrcRef = useRef();
   const isActiveRef = useRef();
-  const [message, setMessage] = useState("");
-  const [categories, setCategories] = useState([]);
-  const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [message, setMessage] = useState<string>("");
+  const [categories, setCategories] = useState<string[]>([]);
+  const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
   const categoriesDbUrl =
     "https://react-june-webshop-default-rtdb.europe-west1.firebasedatabase.app/categories.json";
 

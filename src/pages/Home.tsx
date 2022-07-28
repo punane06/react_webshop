@@ -6,17 +6,18 @@ import Product from "./components/home/Product";
 import FilterBar from "./components/home/FilterBar";
 import CarouselGallery from "./components/home/CarouselGallery";
 import Spinner from "./components/home/Spinner";
+import { ProductModel } from "../models/Product.model";
 
 // ffc
 function Home() {
-  const [products, setProducts] = useState([]);
-  const [originalProducts, setOriginalProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState<ProductModel[]>([]);
+  const [originalProducts, setOriginalProducts] = useState<ProductModel[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
 
-  const [activePage, setActivePage] = useState(1);
-  const [pages, setPages] = useState([]);
+  const [activePage, setActivePage] = useState<number>(1);
+  const [pages, setPages] = useState<number[]>([]);
   const [selectedCatergory, setSelectedCategory] = useState("all");
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState<ProductModel[]>([]);
   const [isLoading, setLoading] = useState(true);
 
   const productDb =
@@ -32,13 +33,13 @@ function Home() {
       });
   }, []);
 
-  const updateData = (firebaseProduct) => {
-    const productArray = [];
+  const updateData = (firebaseProduct: any) => {
+    const productArray: ProductModel[] = [];
     let categoryArray = [];
     const pagesArray = [];
     let i = 0;
     for (const key in firebaseProduct) {
-      const product = firebaseProduct[key];
+      const product: ProductModel = firebaseProduct[key];
       if (product.isActive) {
         productArray.push(product);
         categoryArray.push(product.category);
@@ -83,7 +84,7 @@ function Home() {
   // props
   // <ChildClass VOTI1={muutuja} VOTI2={muutuja} /> - muutuja v]i funktsioon
 
-  const changePage = (number) => {
+  const changePage = (number: number) => {
     setActivePage(number);
     //1 0,10
     //2 10, 20
@@ -122,7 +123,7 @@ function Home() {
       {products.map((e, index) => (
         <Product e={e} index={index} />
       ))}
-      {pages.leng > 1 && (
+      {pages.length > 1 && (
         <Pagination>
           {pages.map((number) => (
             <Pagination.Item
